@@ -1,0 +1,16 @@
+{
+    "extends": "standard",
+    "rules": {
+        "comma-dangle": "off",
+        "space-before-function-paren": "off"
+    },
+    "env": {
+        "node": true,
+        "mocha": true
+    },
+    "globals": {
+        "logger": true,
+        "newError": true,
+        "rootRequire": true
+    }
+}

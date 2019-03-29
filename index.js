@@ -1,6 +1,7 @@
 process.env.PORT = 9091
 process.env.Tz = 'UTC'
 
+const path = require('path')
 const helper = require('./helper')
 const bodyparser = require('body-parser')
 const express = require('express')
@@ -9,7 +10,17 @@ const app = express()
 app.use(cors())
 app.use(bodyparser.text())
 
-app.post('/', (req, res) => {
+/*
+ * serve index.html page which will grab the IP address
+ */
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+})
+
+/*
+ * capture users local ip address and log into local server file
+ */
+app.post('/save_message', (req, res) => {
     const dateTime = helper.getTime()
     if (req.body) {
         const messageToLog = `${dateTime}-${req.body}`

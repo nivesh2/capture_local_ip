@@ -16,7 +16,7 @@
         function publishToServer(message) {
             var xhr = new XMLHttpRequest();
             // server IP required
-            xhr.open("POST", "http://localhost:9091/", true);
+            xhr.open("POST", "/save_message", true);
 
             xhr.send('UUID=' + uniqueIdentifier + '-IP=' + message);
             xhr.onload = function(data) {

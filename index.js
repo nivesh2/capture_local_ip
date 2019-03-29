@@ -1,5 +1,5 @@
 process.env.PORT = 9091
-process.env.Tz = 'UTC'
+process.env.TZ = 'UTC'
 
 const path = require('path')
 const helper = require('./helper')
